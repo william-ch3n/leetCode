@@ -1,9 +1,12 @@
 package com.william.leetcode.medium;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * Link:
+ *  <a href="https://leetcode.cn/problems/html-entity-parser/description/">Q1410</a>
+ */
 public class Quest1410 {
 
     public static void main(String[] args) {
@@ -23,6 +26,16 @@ public class Quest1410 {
 
     }
 
+    /**
+     *  反思：
+     *      功能可以，但是空间和时间效率不行。
+     *  目标：
+     *      循环text一次即完成特殊字符的替换
+     *  怎么做：
+     *      循环字符串，找到&的时候，开始遍历htmlSpecialWords，按照特殊字符长度获取text长度，进行匹配
+     *      如果匹配成功，换成特殊字符然后下标前移相应位数
+     *      如果不匹配，则直接将下标对应的字符输出
+     */
     public static String entityParser(String text) {
         Map<String, String> htmlSpecialWords = new LinkedHashMap<>();
 
